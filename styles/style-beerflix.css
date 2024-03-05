@@ -1,0 +1,228 @@
+:root {
+    --hop-motif: url("images/hop-motif-80.jpg");
+    --text-color-light-mode: rgb(119, 119, 119);
+    --text-hover-color-light-mode: rgb(211, 211, 211);
+    --text-active-color-light-mode: rgb(173, 173, 173);
+    --netflix-red: #E50914;
+}
+
+* {box-sizing: border-box}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.top-bar {
+    display: flex;
+    padding: 1.5vw 4vw;
+    align-items: center;
+}
+
+.nav-bar {
+    display: flex;
+    padding-left: 30px;
+    align-items: center;
+    transition: .4s;
+}
+
+.nav-bar a {
+    color: var(--text-color-light-mode);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0px 10px;
+    transition: .4s;
+}
+
+.nav-bar a:hover {
+    color: var(--text-hover-color-light-mode);
+    transition: .4s;
+}
+
+.nav-bar .active {
+    color: var(--text-active-color-light-mode);
+    transition: .4s;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    height: 30px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: fixed;
+    right: 3vw;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: black;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--netflix-red);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--netflix-red);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    right: calc(3vw + 80px);
+}
+
+.profile img {
+    max-height: 35px;
+    border-radius: 20%;
+}
+
+.dark-mode { 
+    background-color: black;
+    color: white;
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.carousel-container {
+    position: relative;
+    margin: auto;
+    padding-top: 1vw;
+}
+
+/* Hide the images by default */
+.slide {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.8s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.6);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-weight: bold;
+    font-size: 5vw;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    left: 2vw;
+    text-shadow: 0px 0px 15px black;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 5px 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.slider-active, .dot:hover {
+    background-color: var(--netflix-red);
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.embed-video {
+    position: absolute;
+    margin-top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 50px;
+}
